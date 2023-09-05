@@ -1,17 +1,15 @@
 import { Button, Card, TextInput, Title } from "@tremor/react";
 import { useUserAction } from "../hook/useUserAction";
-import { useEffect, useState } from "react";
-import { useAppSelector } from "../hook/store";
 
 function CreateNewUser() {
 	const { addUser } = useUserAction();
 
-	const [state, setState] = useState({
-		name: "",
-		email: "",
-		github: "",
-	});
-	console.log(state);
+	// const [state, setState] = useState({
+	// 	name: "",
+	// 	email: "",
+	// 	github: "",
+	// });
+	// console.log(state);
 
 	// useEffect(() => {
 	// 	if (id) {
@@ -41,11 +39,7 @@ function CreateNewUser() {
 		<Card className="my-5">
 			<Title>Crear Nuevo usuario</Title>
 			<form onSubmit={handelChange} className="grid gap-5 ">
-				<TextInput
-					placeholder="Ingresa el Nombre"
-					name="name"
-					value={state.name}
-				/>
+				<TextInput placeholder="Ingresa el Nombre" name="name" />
 				<TextInput placeholder="Ingresa el Email" name="email" />
 				<TextInput placeholder="Ingresa el Gitub" name="github" />
 				<div className="btn">

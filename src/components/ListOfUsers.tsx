@@ -15,11 +15,11 @@ import { useUserAction } from "../hook/useUserAction";
 export function ListOfUsesrs() {
 	const users = useAppSelector((state) => state.users);
 
-	const { removeUser, editUser } = useUserAction();
+	const { removeUser } = useUserAction();
 
-	const handleUser = (item) => {
-		editUser(item);
-	};
+	// const handleUser = (item) => {
+	// 	editUser(item);
+	// };
 
 	return (
 		<Card>
@@ -53,7 +53,7 @@ export function ListOfUsesrs() {
 							</TableCell>
 							<TableCell>{item.email}</TableCell>
 							<TableCell>
-								<button onClick={() => handleUser(item)} type="button">
+								<button type="button">
 									{/* rome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
 									<svg
 										aria-label="Edit user"
