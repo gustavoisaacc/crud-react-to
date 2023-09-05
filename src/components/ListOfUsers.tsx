@@ -12,14 +12,13 @@ import {
 import { useAppSelector } from "../hook/store";
 import { useUserAction } from "../hook/useUserAction";
 
-export function ListOfUsesrs({ setId }) {
+export function ListOfUsesrs() {
 	const users = useAppSelector((state) => state.users);
 
 	const { removeUser, editUser } = useUserAction();
 
 	const handleUser = (item) => {
 		editUser(item);
-		setId(item.id);
 	};
 
 	return (

@@ -3,8 +3,7 @@ import { useUserAction } from "../hook/useUserAction";
 import { useEffect, useState } from "react";
 import { useAppSelector } from "../hook/store";
 
-function CreateNewUser({ id, setId }) {
-	const user = useAppSelector((state) => state.users);
+function CreateNewUser() {
 	const { addUser } = useUserAction();
 
 	const [state, setState] = useState({
@@ -14,11 +13,11 @@ function CreateNewUser({ id, setId }) {
 	});
 	console.log(state);
 
-	useEffect(() => {
-		if (id) {
-			setState(user.filter((item) => item.id === id));
-		}
-	}, [id]);
+	// useEffect(() => {
+	// 	if (id) {
+	// 		setState(user.filter((item) => item.id === id));
+	// 	}
+	// }, [id]);
 
 	const handelChange = (e) => {
 		e.preventDefault();
