@@ -17,7 +17,7 @@ function CreateNewUser() {
 	// 	}
 	// }, [id]);
 
-	const handelChange = (e) => {
+	const handelChange = (e: { preventDefault: () => void; target: any }) => {
 		e.preventDefault();
 
 		const form = e.target;
