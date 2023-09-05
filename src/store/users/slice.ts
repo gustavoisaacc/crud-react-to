@@ -53,17 +53,17 @@ export const usersSlice = createSlice({
 			const id = action.payload;
 			return state.filter((user) => user.id !== id);
 		},
-		editUserSlice: (state, action: PayloadAction<UserWithId>) => {
-			const { id, name, email, github } = action.payload;
-			const newUserEdit = state.find((user) => user.id === id);
-			if (newUserEdit) {
-				newUserEdit.name = name;
-				newUserEdit.email = email;
-				newUserEdit.github = github;
-			}
-		},
+		// editUserSlice: (state, action: PayloadAction<UserWithId>) => {
+		// 	const { id, name, email, github } = action.payload;
+		// 	const newUserEdit = state.find((user) => user.id === id);
+		// 	if (newUserEdit) {
+		// 		newUserEdit.name = name;
+		// 		newUserEdit.email = email;
+		// 		newUserEdit.github = github;
+		// 	}
+		// },
 	},
 });
 
 export default usersSlice.reducer;
-export const { addNewUser, deleteUserById, editUserSlice } = usersSlice.actions;
+export const { addNewUser, deleteUserById } = usersSlice.actions;
